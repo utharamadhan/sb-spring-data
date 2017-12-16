@@ -1,4 +1,4 @@
-package com.rpramadhan.sbtraining.main;
+package com.rpramadhan.sbspringdata.main;
 
 import javax.sql.DataSource;
 
@@ -17,16 +17,16 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  * Enter point for Liquibase Application
  */
 @SpringBootApplication
-@ComponentScan("com.rpramadhan.sbtraining")
-@EntityScan({"com.rpramadhan.sbtraining.model"})
-@EnableJpaRepositories({"com.rpramadhan.sbtraining.repository"})
-public class SBTrainingMain {
+@ComponentScan("com.rpramadhan.sbspringdata")
+@EntityScan({"com.rpramadhan.sbspringdata.model"})
+@EnableJpaRepositories({"com.rpramadhan.sbspringdata.repository"})
+public class SBSpringDataMain {
 	
 	@Autowired
 	private DataSource dataSource;
 	
 	public static void main(String[] args) throws Exception {
-		SpringApplication.run(SBTrainingMain.class, args);
+		SpringApplication.run(SBSpringDataMain.class, args);
 	}
 	
 	@Bean

@@ -15,12 +15,12 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.rpramadhan.sbtraining.main.SBTrainingMain;
-import com.rpramadhan.sbtraining.model.Book;
-import com.rpramadhan.sbtraining.model.Response;
+import com.rpramadhan.sbspringdata.main.SBSpringDataMain;
+import com.rpramadhan.sbspringdata.model.Book;
+import com.rpramadhan.sbspringdata.model.Response;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = SBTrainingMain.class)
+@SpringBootTest(classes = SBSpringDataMain.class)
 public class GetBookTest {
 	
 	private MockMvc mockMvc;
@@ -54,7 +54,7 @@ public class GetBookTest {
 	
 	@Test
 	public void findByIdNotFound() throws Exception {
-		Long _testId = 10L;
+		Long _testId = -1L;
 		mockMvc.perform(MockMvcRequestBuilders.get("/"+_testId))
 			.andExpect(new ResultMatcher() {
 				@Override

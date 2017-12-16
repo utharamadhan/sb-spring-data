@@ -1,10 +1,13 @@
-package com.rpramadhan.sbtraining.service;
+package com.rpramadhan.sbspringdata.service;
+
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.rpramadhan.sbtraining.model.Book;
-import com.rpramadhan.sbtraining.repository.BookRepository;
+import com.rpramadhan.sbspringdata.model.AuthorCount;
+import com.rpramadhan.sbspringdata.model.Book;
+import com.rpramadhan.sbspringdata.repository.BookRepository;
 
 @Component
 public class BookService implements IBookService {
@@ -15,11 +18,7 @@ public class BookService implements IBookService {
 	
 	@Override
 	public Book findById(Long id) {
-		try {
-			return repository.findOne(id);
-		} catch (Exception ex) {
-			return null;
-		}
+		return repository.findOne(id);
 	}
 
 	@Override
@@ -32,6 +31,11 @@ public class BookService implements IBookService {
 	
 	private Boolean isExists(Long id) {
 		return findById(id) != null;
+	}
+
+	@Override
+	public List<AuthorCount> countByAuthor() {
+		return repository.countByAuthor();
 	}
 	
 }

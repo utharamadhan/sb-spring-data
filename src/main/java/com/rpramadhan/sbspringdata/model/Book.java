@@ -1,4 +1,4 @@
-package com.rpramadhan.sbtraining.model;
+package com.rpramadhan.sbspringdata.model;
 
 import java.io.Serializable;
 
